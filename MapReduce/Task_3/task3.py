@@ -1,11 +1,7 @@
-# Average Number of Friends by Age - Task #1
-# Hadoop MapReduce
-
-# Importing the libraries
 from mrjob.job import MRJob
 from mrjob.step import MRStep
 import string
-# Creating the class
+
 class CounteWordsSorted(MRJob):
 
     def steps(self):
