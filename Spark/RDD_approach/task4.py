@@ -15,9 +15,7 @@ data = lines.map(parse)
 
 ammount_by_costumer = data.reduceByKey(lambda x, y: x + y)
 
-sorted_rdd = ammount_by_costumer.sortBy(lambda x:x[1],ascending=True)
-
-output = sorted_rdd.collect()
+output = ammount_by_costumer.collect()
 
 for out in output:
     print("Customer_{}: {}".format(out[0],out[1]))
