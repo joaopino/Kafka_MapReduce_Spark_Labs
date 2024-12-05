@@ -1,6 +1,6 @@
 from pyspark import SparkContext, SparkConf
 
-conf = SparkConf().setAppName("lab7-1").setMaster("local")
+conf = SparkConf().setAppName("lab7-2").setMaster("local")
 sc = SparkContext(conf=conf)
 
 # Create the RDD "lines"
@@ -15,7 +15,7 @@ filtered_words = words.filter(lambda x: x.isalpha())
 pairs = filtered_words.map(lambda x: (x,1))
 
 #New RDD with Reduce by value
-counted_words = pairs.reduceByKey(lambda x, y: x + y)
+counted_words = pairs.reduceByKey(lambda x, y: y + y)
 # Get python array with output
 output = counted_words.collect()
 

@@ -1,6 +1,6 @@
 from pyspark import SparkContext, SparkConf
 
-conf = SparkConf().setAppName("lab7-1").setMaster("local")
+conf = SparkConf().setAppName("lab7-3").setMaster("local")
 sc = SparkContext(conf=conf)
 
 # Create the RDD "lines"
