@@ -1,6 +1,6 @@
 from pyspark import SparkContext, SparkConf
 
-conf = SparkConf().setAppName("lab7-6").setMaster("local")
+conf = SparkConf().setAppName("lab7-7").setMaster("local")
 sc = SparkContext(conf=conf)
 
 # Create the RDD "lines"
@@ -24,13 +24,12 @@ pair_occurence = all_occurrences_f.map(lambda x: (x,1))
 # New RDD with coun of occurences
 count_occurences = pair_occurence.reduceByKey(lambda x, y: x + y)
 
-sorted_most_famous = count_occurences.sortBy(lambda x:x[1],ascending=False)
-output = sorted_most_famous.take(1)
+sorted_least_famous = count_occurences.sortBy(lambda x:x[1],ascending=True)
+output = sorted_least_famous.take(1)
 
 RDD_by_name = marvel_names_by_id.filter(lambda x: x[0] == int(output[0][0]))
 name = RDD_by_name.take(1)
 
-    
 print("{} with {} occurences".format(name[0][1],output[0][1]))
 
     

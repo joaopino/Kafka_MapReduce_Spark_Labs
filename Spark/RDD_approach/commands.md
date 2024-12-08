@@ -24,20 +24,20 @@ python3 task3.py
 
 ## Exercise 4 - Obtain the Total Amount Spent by Customer
 ```
-
+python3 task4.py
 ```
 
 ## Exercise 5 - Sort the Total Amount Spent by Customer
 ```
-
+python3 task5.py
 ```
 
 ## Exercise 6 - Most Popular Superhero
 ```
-
+python3 task6.py
 ```
 
 ## Exercise 7 - Least Popular Superhero
 ```
-
+python3 task7.py
 ```
